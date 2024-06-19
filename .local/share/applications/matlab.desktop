@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Matlab R2024a
+Exec=/home/andrew/Software/Matlab_R2024a/bin/matlab
+Type=Application
+Terminal=false
+Categories=Application;
+Icon=/home/andrew/.local/share/applications/icons/matlab.png
+Actions=Configure;
+[Desktop Action Configure]
+Name=Matlab R2024a
+Exec=/home/andrew/Software/Matlab_R2024a/bin/matlab
+
