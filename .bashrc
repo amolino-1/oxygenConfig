@@ -35,21 +35,21 @@ alias wifion='nmcli radio wifi on'
 alias wifioff='nmcli radio wifi off'
 
 ###---MyScripts---###
-export PATH="$PATH:/home/andrew/Scripts/Bash_Scripts/"
+export PATH="$PATH:$HOME/Scripts/Bash_Scripts/"
 
 ###---SSH---###
 # Gadi
 alias gadi='ssh axm572@gadi.nci.org.au'
-alias mountgadi='sshfs axm572@gadi.nci.org.au:/scratch/k02/axm572 /home/andrew/Work/Gadi -o cache=yes,kernel_cache,Ciphers=aes128-ctr,Compression=no'
-alias unmountgadi='cd && fusermount3 -u /home/andrew/Work/Gadi'
+alias mountgadi='sshfs axm572@gadi.nci.org.au:/scratch/k02/axm572 $HOME/Work/Gadi -o cache=yes,kernel_cache,Ciphers=aes128-ctr,Compression=no'
+alias unmountgadi='cd && fusermount3 -u $HOME/Work/Gadi'
 # Engaging
 alias engaging='ssh amolino@eofe10.mit.edu'
-alias mountengaging='sshfs amolino@eofe10.mit.edu: /home/andrew/Work/Engaging/ -o cache=yes,kernel_cache,Ciphers=aes128-ctr,Compression=no'
-alias unmountengaging='cd && fusermount3 -u /home/andrew/Work/Engaging'
+alias mountengaging='sshfs amolino@eofe10.mit.edu: $HOME/Work/Engaging/ -o cache=yes,kernel_cache,Ciphers=aes128-ctr,Compression=no'
+alias unmountengaging='cd && fusermount3 -u $HOME/Work/Engaging'
 # Supercloud
 alias supercloud='ssh amolino@txe1-login.mit.edu'
-alias mountsupercloud='sshfs amolino@txe1-login.mit.edu: /home/andrew/Work/SuperCloud -o cache=yes,kernel_cache,Ciphers=aes128-ctr,Compression=no'
-alias unmountsupercloud='cd && fusermount3 -u /home/andrew/Work/SuperCloud'
+alias mountsupercloud='sshfs amolino@txe1-login.mit.edu: $HOME/Work/SuperCloud -o cache=yes,kernel_cache,Ciphers=aes128-ctr,Compression=no'
+alias unmountsupercloud='cd && fusermount3 -u $HOME/Work/SuperCloud'
 # Athena
 alias athena='ssh -X -Y athena.dialup.mit.edu -l amolino'
 # Pihole
@@ -82,21 +82,24 @@ alias fzf='fzf --preview="bat --color=always --style=numbers {}" --bind shift-up
 alias chemcraft='flatpak run --command=bottles-cli com.usebottles.bottles run -b Chemcraft -e ~/.var/app/com.usebottles.bottles/data/bottles/bottles/Chemcraft/drive_c/Chemcraft/Chemcraft.exe'
 
 ###---IboView---###
-alias iboview='flatpak run --command=bottles-cli com.usebottles.bottles run -b Chemcraft -e /home/andrew/Software/iboView_Version20211019RevA/bin/IboView.exe'
+alias iboview='flatpak run --command=bottles-cli com.usebottles.bottles run -b Chemcraft -e $HOME/iboView_Version20211019RevA/bin/IboView.exe'
+
+###---Matlab---###
+alias matlab='$HOME/Software/Matlab_R2024a/bin/matlab & disown'
 
 ###---Gaussian---###
 export g16root="$HOME/Software/Gaussian"
 export GAUSS_EXEDIR=$g16root/g16
 export GAUSS_SCRDIR=$g16root/scr
 alias g16='$GAUSS_EXEDIR/g16'
-alias gview="/home/andrew/Software/gview/gv/gv & disown"
+alias gview="$HOME/Software/gview/gv/gv & disown"
 
 ###---ACID---###
-export PATH=$PATH:/home/andrew/Software/povchem
-export PATH=$PATH:/home/andrew/Software/AICD-3.0.4
+export PATH=$PATH:$HOME/Software/povchem
+export PATH=$PATH:$HOME/Software/AICD-3.0.4
 
 ###---ParaView---###
-export PATH=$PATH:/home/andrew/Software/ParaView-5.12.1/bin/
+export PATH=$PATH:$HOME/Software/ParaView-5.12.1/bin/
 
 ###---Starship Prompt---###
 eval "$(starship init bash)"
