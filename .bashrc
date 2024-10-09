@@ -13,7 +13,12 @@
 
 PS1='[\u@\h \W]\$ '
 ################################################################################
-PF_INFO="ascii title os kernel wm uptime pkgs memory" pfetch
+
+if [ -f $HOME/.bash_aliases ]; then
+    . $HOME/.bash_aliases
+fi
+
+# PF_INFO="ascii title os kernel wm uptime pkgs memory" pfetch
 
 export EDITOR=nvim
 
@@ -47,7 +52,7 @@ alias engaging='ssh amolino@eofe10.mit.edu'
 alias mountengaging='sshfs amolino@eofe10.mit.edu: $HOME/Work/Engaging/ -o cache=yes,kernel_cache,Ciphers=aes128-ctr,Compression=no'
 alias unmountengaging='cd && fusermount3 -u $HOME/Work/Engaging'
 # Supercloud
-alias supercloud='ssh amolino@txe1-login.mit.edu'
+alias supercloud='ssh amolino@txe1-login.mit.edu -X -Y'
 alias mountsupercloud='sshfs amolino@txe1-login.mit.edu: $HOME/Work/SuperCloud -o cache=yes,kernel_cache,Ciphers=aes128-ctr,Compression=no'
 alias unmountsupercloud='cd && fusermount3 -u $HOME/Work/SuperCloud'
 # Athena
@@ -80,9 +85,6 @@ alias fzf='fzf --preview="bat --color=always --style=numbers {}" --bind shift-up
 
 ###---Chemcraft---###
 alias chemcraft='flatpak run --command=bottles-cli com.usebottles.bottles run -b Chemcraft -e ~/.var/app/com.usebottles.bottles/data/bottles/bottles/Chemcraft/drive_c/Chemcraft/Chemcraft.exe'
-
-###---IboView---###
-alias iboview='flatpak run --command=bottles-cli com.usebottles.bottles run -b Chemcraft -e $HOME/iboView_Version20211019RevA/bin/IboView.exe'
 
 ###---Matlab---###
 alias matlab='$HOME/Software/Matlab_R2024a/bin/matlab & disown'
